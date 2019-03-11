@@ -20,7 +20,7 @@ function getSelectedItem() {
 	}
 	else {
 		return "#" + selected.first().attr('id')
-	} 
+	}
 }
 
 // the next four functions move the selected UI control
@@ -53,7 +53,7 @@ function selectPrevious() {
 		index = (index - 1);
 		if (index < 0) index = buttonOrder.length + index
 		selectItem(buttonOrder[index])
-	}	
+	}
 }
 
 function selectUp() {
@@ -91,11 +91,17 @@ function clickSelectedItem() {
 
 // this function responds to user key presses
 // you'll rewrite this to control your interface using some number of keys
-$(document).keypress(function(event) {
+$(document).keydown(function(event) {
 	if (event.key == "a") {
-		alert("You pressed the 'a' key!")	
+		alert("You pressed the 'a' key!")
 	} else if (event.key == "b") {
 		alert("You pressed the 'b' key!")
+	} else if (event.keyCode == 39) {
+		selectNext();
+	} else if (event.keyCode == 37) {
+		selectPrevious();
+	} else if (event.keyCode == 32) {
+		clickSelectedItem();
 	}
 })
 
@@ -112,7 +118,7 @@ operators = "+-*/"
 // handle calculator functions. all buttons with class calcButton will be handled here
 $(".calcButton").click(function(event) {
 	buttonLabel = $(this).text();
-	
+
 	// if it's a number, add it to our display
 	if (digits.indexOf(buttonLabel) != -1) {
 		// if we weren't just adding a number, clear our screen
@@ -170,7 +176,7 @@ function evaluateExpression(first,op,second) {
 	} else if (op == "/") {
 		output = parseInt(first) / parseInt(second);
 	}
-	
+
 	// now, handle it
 	$("#number_input").val(output.toString());
 	// deal with state elsewhere

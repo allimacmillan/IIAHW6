@@ -1,9 +1,12 @@
 body {
-	font-family: helvetica, arial, sans-serif; margin: 16px;
+	font-family: helvetica, arial, sans-serif; margin: 16px; font-size: 14px;
 }
-#calculator { background: #ccc; padding: 16px; width: 462px; text-align: center; border: 3px solid black}
+#calculator { background: #ccc; padding: 16px; width: 462px; text-align: center; border: 3px solid black; float: left;}
 
-#calculator h1 { font-size: large; font-family: helvetica, arial, sans-serif; }
+#calculator h1 { font-size: large; font-family: helvetica, arial, sans-serif;}
+
+#about {float: left; margin-left: 40px; margin-top: -20px;}
+#test {float: left; margin-left: 40px; margin-top: -20px;}
 
 .calculator_row { margin-bottom: 8px;}
 .calculator_row button { font-size: xx-large; padding: 10px; width: 100px; background: #eee; border: 2px solid black; font-family: ocr-a, consolas, monospaced; font-weight: bold; margin: 5px;}
@@ -24,3 +27,5 @@ label {
 	border: 1px solid black;
 	padding: 10px;
 }
+
+li {width: 250px;}
